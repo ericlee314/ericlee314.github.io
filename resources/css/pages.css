@@ -1,0 +1,170 @@
+#pages {
+	width: auto;
+	margin: auto;
+	min-height: 600px;
+	z-index: 1;
+	position: relative;
+    padding: 256px 0 128px;
+}
+
+.page {
+	width: auto;
+	max-width: 1200px;
+	margin: auto;
+    padding: 16px;
+	min-height: 600px;
+	overflow: auto;
+    position: relative;
+}
+
+#pages .page {
+	display: none;
+}
+
+.page:empty {
+	background-image: url(../ui/loading.gif);
+	background-position: center;
+	background-repeat: no-repeat;
+	opacity: 0.3;
+	filter: alpha(opacity=30); /* For IE8 and earlier */
+}
+
+.page h1 {
+	text-align: center;
+}
+
+
+.icon {
+    width: 128px;
+    height: 128px;
+    float: left;
+    padding-right: 8px;
+}
+.strip {
+    overflow: hidden;
+    background: rgba(0,0,0,.1);
+    margin-bottom: 32px;
+	position: relative;
+}
+.strip h2 {
+    display: none;
+}
+.strip .summary {
+    margin: 8px;
+}
+.faux-title {
+    font-weight: bold;
+    padding-right: 2px;
+}
+
+.links {
+	overflow: auto;
+	position: absolute;
+	bottom: 0;
+	margin: 8px;
+	padding-left: 128px;
+}
+
+.links a {
+	background: url(../ui/new_window.svg) bottom right no-repeat;
+	color: #3366cc;
+	padding-right: 16px;
+	height: 22px;
+	border-bottom: 1.65px solid #3366cc;
+	text-decoration: none;
+	display: block;
+	float: left;
+	margin-right: 16px;
+	overflow: hidden;
+}
+
+
+
+.blocks {
+    position: relative;
+    margin-right: -16px;
+}
+
+.block {
+    display: block;
+    width: 25%;
+    float: left;
+            transition: opacity 0.2s;
+    -webkit-transition: opacity 0.2s;
+}
+
+.block > img {
+    width: 100%;
+    display: block;
+}
+
+
+
+.highslide img {
+    border: 1px solid #ccc;
+}
+
+.highslide img:hover {
+    border: 1px solid #999;
+}
+
+.highslide-image {
+	border: 4px solid #FFFFFF;
+}
+
+.closebutton {
+    background: url(../ui/highslide/close.png);
+}
+
+a.highslide-full-expand {
+    background: url(../ui/highslide/fullexpand.gif);
+}
+
+.highslide-loading {
+	background-image: url(../ui/highslide/loader.white.gif);
+}
+
+.highslide-container div {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+
+
+@media (max-width: 640px) {
+	
+	.strip {
+		padding-bottom: 32px;
+	}
+	
+	.strip h2 {
+		display: block;
+		position: relative;
+		margin: 0;
+		margin-top: -12px;
+		height: 24px;
+		font-size: 24px;
+		line-height: 1em;
+		font-weight: inherit;
+	}
+	
+	.faux-title {
+		font-weight: normal;
+		padding-right: 0;
+	}
+	
+	.strip .summary {
+		clear: both;
+		padding-top: 8px;
+	}
+	
+	.links {
+		padding-left: 0;
+	}
+}
+
+@media (max-width: 512px) {
+	.links a {
+		height: 20px;
+	}
+}

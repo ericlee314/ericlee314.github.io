@@ -1,0 +1,4 @@
+<a href="design/csa.jpg" target="_blank"><img src="design/csa_icon.jpg" class="design"></a>
+<a href="design/phs.jpg" target="_blank"><img src="design/phs_icon.jpg" class="design"></a>
+<a href="design/scotbotics.jpg" target="_blank"><img src="design/scotbotics_icon.jpg" class="design"></a>
+<a href="design/tony.jpg" target="_blank"><img src="design/tony_icon.jpg" class="design"></a>

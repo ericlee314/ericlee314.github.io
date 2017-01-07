@@ -1,0 +1,122 @@
+#pages {
+	width: auto;
+	margin: auto;
+	padding: 0 16px;
+	min-height: 1000px;
+	z-index: 1;
+	position: relative;
+}
+
+.page {
+	display: none;
+	width: auto;
+	max-width: 1200px;
+	margin: auto;
+	min-height: 600px;
+	padding: 256px 0 128px;
+	overflow: auto;
+}
+
+.page:empty {
+	background-image: url(images/loading.gif);
+	background-position: center;
+	background-repeat: no-repeat;
+	opacity: 0.3;
+	filter: alpha(opacity=30); /* For IE8 and earlier */
+}
+
+.page h1 {
+	text-align: center;
+}
+
+
+.icon {
+    width: 128px;
+    height: 128px;
+    float: left;
+    padding-right: 8px;
+}
+.strip {
+    overflow: hidden;
+    background: rgba(0,0,0,.1);
+    margin-bottom: 32px;
+	position: relative;
+}
+.strip h2 {
+    display: none;
+}
+.strip .summary {
+    margin: 8px;
+}
+.faux-title {
+    font-weight: bold;
+    padding-right: 2px;
+}
+
+.links {
+	overflow: auto;
+	position: absolute;
+	bottom: 0;
+	margin: 8px;
+	padding-left: 128px;
+}
+
+.links a {
+	background: url(images/new_window.svg) bottom right no-repeat;
+	color: #3366cc;
+	padding-right: 16px;
+	height: 22px;
+	border-bottom: 1.65px solid #3366cc;
+	text-decoration: none;
+	display: block;
+	float: left;
+	margin-right: 16px;
+	overflow: hidden;
+}
+
+.design {
+	width: 256px;
+	height: 256px;
+	float: left;
+	margin: 16px;
+}
+
+
+
+@media (max-width: 640px) {
+	
+	.strip {
+		padding-bottom: 32px;
+	}
+	
+	.strip h2 {
+		display: block;
+		position: relative;
+		margin: 0;
+		margin-top: -12px;
+		height: 24px;
+		font-size: 24px;
+		line-height: 1em;
+		font-weight: inherit;
+	}
+	
+	.faux-title {
+		font-weight: normal;
+		padding-right: 0;
+	}
+	
+	.strip .summary {
+		clear: both;
+		padding-top: 8px;
+	}
+	
+	.links {
+		padding-left: 0;
+	}
+}
+
+@media (max-width: 512px) {
+	.links a {
+		height: 20px;
+	}
+}
