@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<style>
+  body {
+    padding: 100px;
+    width: 1000px;
+    margin: auto;
+    text-align: left;
+    font-weight: 300;
+    font-family: 'Open Sans', sans-serif;
+    color: #121212;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+</style>
+<title>CS 184 Final Project</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Source+Sans+Pro" rel="stylesheet">
+</head>
+
+
+<body>
+
+<!-- <h1 align="middle">CS 184: Computer Graphics and Imaging, Spring 2017</h1> -->
+<h1 align="middle">Light Field Rendering for Quick Focal Changes and Stereoscopic 3D</h1>
+<h2 align="middle">Eric Lee, CS184-ach</h2>
+<h2 align="middle">Xintian Meng, CS184-adz</h2>
+<br><br>
+
+<div>
+
+<h2 align="middle">Summary</h2>
+<p>In this project, we will add support for light field rendering to our Project 3 code. By rendering multiple images of the same scene from slightly different perspectives, we can create images with variable focal distance and stereoscopic 3D effects.</p>
+
+<h2 align="middle">Problem Description</h2>
+
+<p>When rendering complex images, it is often time-consuming to modify parameters such as focal distance. Light fields provide a solution to this problem. By rendering multiple images of the same scene, we can effectively pre-compute our scene’s render at any focal distance. By creating a GUI to perform post-processing on our light field, we can refocus our scene to any point of our choosing, in a matter of seconds (as opposed to hours). </p>
+<p>The images that comprise the light field are rendered with slightly different camera positions. This pairs up conveniently with stereoscopic 3D. Stereoscopy involves displaying two different images to the viewer—one for each eye—to create a 3D depth effect. By generating our light field images, not only can we create stereoscopic 3D images, but we can also allow for quick modification of 3D intensity using our GUI. </p>
+<p>The main challenges involved in this project are problems of scale. In order to create a sufficiently detailed light field, we will need to pre-render dozens (if not hundreds) of images, which will take considerable computing time. Using the light field won’t be easy either, as our GUI will need to load and manipulate many images at a time. </p>
+
+
+<h2 align="middle">Goals and Deliverables</h2>
+<p>This project will have two main components/deliverables: the ray tracer, and the live demo. For each one, we have listed our baseline goals/deliverables, as well as extra features we hope to implement.</p>
+
+<h3 align="middle">Ray Tracer</h3>
+<p>Extend Project 3 so that we can generate light field images. Here are some of the things required to complete this task:<p>
+
+<ul><li>Shift the camera position by specific (u, v) offsets in order to create individual light field images</li>
+<li><em>(EXTRA)</em> Generate a distance map so that the GUI can automatically focus on specific points in the scene</li>
+<li><em>(EXTRA)</em> Build a system to generate multiple light field images at a time, so that we don’t need to start each render individually</li>
+</ul>
+
+
+<h3 align="middle">Live Demo</h3>
+<p>Build a system that can use the light field data to quickly generate images with custom focal distance and stereoscopic 3D. Here are some of the things required to complete this task:<p>
+
+<ul><li>"Shift and add" algorithm that averages multiple light field images to create depth of field</li>
+<li>Compositor that can generate two images, one for each eye, and display them in some way (either side-by-side for cross-eyed viewing, or red/cyan anaglyph)</li>
+<li><em>(EXTRA)</em> Creating a nice GUI for parameter modification e.g. clicking on a part of the image to focus, sliders for depth of field and stereoscopic 3D intensity</li>
+<li><em>(EXTRA)</em> VR support: View output images in stereoscopic 3D using a lightweight smartphone app and Google Cardboard (possibly with onboard parameter modification/image generation)</li>
+</ul>
+
+
+<h3 align="middle">Measuring Quality and Performance</h3>
+<p>These are the main measures we will likely use to gauge our success:<p>
+
+<ul><li><em>Algorithm speed:</em> How quickly can we generate our final images from the light field data? Ideally, each image will take no more than a few seconds to generate.</li>
+<li><em>Image quality:</em> How realistic are the depth of field and 3D effects? More generally, how good do the final images look?</li>
+<li><em>User experience:</em> How pleasant or convenient is the GUI/image generation process?</li>
+</ul>
+
+<h2 align="middle">Schedule</h2>
+<ul><li><em>Week 1 (by 4/14):</em> Confirm technical details e.g. How many light field images do we need? What perspective displacements should we use?</li>
+<li><em>Week 2 (by 4/21):</em> Complete the ray tracer additions, so that we can begin to render the light field images.</li>
+<li><em>Week 3 (by 4/28):</em> Begin prototyping of GUI/live demo; begin rendering light field images for live demo.</li>
+<li><em>Week 4 (by 5/3):</em> Complete GUI/live demo; finish rendering light field images.</li>
+</ul>
+
+<h2 align="middle">Resources</h2>
+<p>Our main resource will be Ren Ng’s guest lecture in CS194-26 (Fall 2016). Ren discussed light fields and provided the theoretical basis we will be using to write our algorithms.<p>
+
+</body>
+</html>
