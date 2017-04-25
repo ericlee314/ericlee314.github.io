@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<style>
+  body {
+    padding: 100px;
+    width: 1000px;
+    margin: auto;
+    text-align: left;
+    font-weight: 300;
+    font-family: 'Open Sans', sans-serif;
+    color: #121212;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+</style>
+<title>CS 184 Final Project Milestone</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Source+Sans+Pro" rel="stylesheet">
+</head>
+
+<body>
+
+<h1 align="middle">Light Field Rendering for Quick Focal Changes and Stereoscopic 3D</h1>
+<h2 align="middle">Eric Lee, CS184-ach</h2>
+<h2 align="middle">Xintian Meng, CS184-adz</h2>
+<br>
+
+<div>
+
+<h3 align="middle">Milestone Summary</h3>
+<p>We have extended our project 3 ray tracer to generate a 4-dimentional light field instead of rendering a single image from a stationary camera. Our ray tracer renders multiple images of the same scene from variable camera positions. This creates a 2-dimentional array of images where each with a slightly different perspectives. By combining these images, we can generate several interesting effects. For instance, we have simulated a depth of field effects with varibale focal distance by averaging the images in Photoshop. We have also created stereoscopic 3D images which allow the user to perceive depth and relative distance when viewed with 3D glasses. Finally, we have equipped our ray tracer to generate a depth map with light values corresponding to surface distance from viewpoint which will assist us in creating an interavtive experience where the user can refocus the sence on any point of clicking.</p>
+
+
+<h3 align="middle">Progress and Future goals</h3>
+
+<p>We have achieved the functionality of shifting the camera position by specific (u, v) offsets to create individual light field images. Following images include the final results of a depth of field effects with short/long focal distance, a steroescopic 3D image and a depth map, and they are created from a 3x3 image array, where each image (400x400) only takes a few seconds to render. (With the exception of the depth map, the images below were compiled in Photoshop from the original light field renders.)</p>
+<div align="middle">
+  <table style="width=100%">
+    <tr>
+      <td>
+        <img src="milestone_images/focus1.png" align="middle" width="200px"/>
+        <figcaption align="middle">Short focal distance</figcaption>
+      </td>
+      <td>
+        <img src="milestone_images/focus2.png" align="middle" width="200px"/>
+        <figcaption align="middle">Long focal distance</figcaption>
+      </td>
+    </tr>
+    <br>
+  </table>
+</div>
+
+<div align="middle">
+  <table style="width=100%">
+    <tr>
+      <td>
+        <img src="milestone_images/3d.png" align="middle" width="200px"/>
+        <figcaption align="middle">Stereoscopic 3D</figcaption>
+      </td>
+      <td>
+        <img src="milestone_images/spheres_distmap_1.585071.png" align="middle" width="200px"/>
+        <figcaption align="middle">Depth Map</figcaption>
+      </td>
+    </tr>
+    <br>
+  </table>
+</div>
+<p>Future goals include: Start building an interactive GUI/live demo system that can quickly generate images with custom focal distance; Begin rendering a larger scale light field images for GUI/live demo; Add in VR support as an extra.</p>
+
+<h3 align="middle">Video</h3>
+<iframe width="720" height="405" style="display:block;margin:auto" src="https://www.youtube.com/embed/RpQkpwKKVhg" frameborder="0" allowfullscreen></iframe>
+
+<h3 align="middle">Slides</h3>
+
+<a href="milestone_images/1.png" target="_blank">Slide 1</a>
+<a href="milestone_images/2.png" target="_blank">Slide 2</a>
+<a href="milestone_images/3.png" target="_blank">Slide 3</a>
+<a href="milestone_images/4.png" target="_blank">Slide 4</a>
+<a href="milestone_images/5.png" target="_blank">Slide 5</a>
+
+</body>
+</html>
